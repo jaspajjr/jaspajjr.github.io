@@ -8,8 +8,8 @@ docker run --rm \
         -v "$(pwd):/src" \
         -w /src \
         ruby:2.3 \
+        sh -c 'bundle update' \
         sh -c '
-            bundle update \
             bundle install \
             --path vendor/bundle \
             && exec jekyll build --watch'
@@ -24,3 +24,5 @@ docker build -t my-shiny-blog .
 ```
 docker build -t my-shiny-blog .
 ```
+
+https://blog.nimbleci.com/2016/08/10/how-to-deploy-a-jekyll-blog-in-docker/
